@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Natalia Machella - Full Stack Developer</title>
     <!--  FONT AWESOME -->
     <link
       rel="stylesheet"
@@ -12,7 +13,11 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <title>NM Web Developer</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+    />
+
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -68,6 +73,7 @@
 
       <nav class="nav">
         <ul>
+          <li><a href="#">Inicio</a></li>
           <li><a href="#sobremi">Sobre mí</a></li>
           <li><a href="#portfolio">Portfolio</a></li>
         </ul>
@@ -138,33 +144,130 @@
     <!-- SECCION PORTFOLIO -->
     <section id="portfolio">
       <h3 class="titulo-seccion">MIS PROYECTOS</h3>
-      <div class="fila">
-        <div class="proyecto">
-          <div class="overlay">
-            <img src="img/img_de_pueba.png" alt="" />
-            <div class="info">
-              <h3>Título del proyecto</h3>
-              <h5>Tecnologías usadas</h5>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam
-                inventore reiciendis ad error nulla, modi quod perspiciatis
-                veritatis harum ex et necessitatibus veniam dolorem iusto saepe.
-                Voluptas accusamus in magnam!
-              </p>
+
+      <!-- CARRUSEL -->
+      <div class="swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide card">
+            <div class="thumbnail">
+              <img src="img/RevistaWOW.png" alt="" />
+            </div>
+
+            <a href="#" class="title-container">
+              <h3>Revista WOW!</h3>
+            </a>
+
+            <div class="description">
+              Este proyecto grupal fue parte de la Práctica Profesional del
+              Bootcamp para la empresa Hogarth que nos solicitó crear una
+              revista digital que cuente con un perfil de administrador para
+              gestionar las publicaciones y además agregar un widget interactivo
+              a la página que redireccione a diferentes notas según el estado de
+              ánimo que declare el usuario.
               <div class="proyecto__iconos">
-                <a href="#" target="_blank"
+                <a
+                  href="https://github.com/nataliamachella/Hogarth_Frontend"
+                  target="_blank"
                   ><i class="fa-brands fa-github fa-xl"></i
                 ></a>
-                <a href="#" target="_blank"
+                <a href="https://youtu.be/crgvwCibUOQ" target="_blank"
                   ><i class="fa-brands fa-youtube fa-xl"></i
+                ></a>
+                <a href="https://hogarth-frontend.vercel.app/" target="_blank"
+                  ><i class="fa-solid fa-globe fa-xl"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide card">
+            <div class="thumbnail">
+              <img src="img/MoviesDB.png" alt="" />
+            </div>
+
+            <a href="#" class="title-container">
+              <h3>MoviesDB</h3>
+            </a>
+
+            <div class="description">
+              Web de películas y series realizada mediante el stack: Node.js,
+              Express.js, MongoDB, React y MaterialUI. Fue parte del proyecto
+              individual solicitado en el Bootcamp. Utilizamos la API de TMDB.
+              <div class="proyecto__iconos">
+                <a
+                  href="https://github.com/nataliamachella/movies-db"
+                  target="_blank"
+                  ><i class="fa-brands fa-github fa-xl"></i
+                ></a>
+                <a href="https://youtu.be/o5gVoyVyJ8o" target="_blank"
+                  ><i class="fa-brands fa-youtube fa-xl"></i
+                ></a>
+                <a href="https://movies-db-goxc.vercel.app/" target="_blank"
+                  ><i class="fa-solid fa-globe fa-xl"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide card">
+            <div class="thumbnail">
+              <img src="img/pacman-game.png" alt="" />
+            </div>
+
+            <a href="#" class="title-container">
+              <h3>PacMan Game</h3>
+            </a>
+
+            <div class="description">
+              Este proyecto lo realicé con el fin de fortalecer mis
+              conocimientos en Javascript, además me divirtió crearlo porque me
+              recordó el clásico juego de mi infancia. Tiene su contador de
+              puntaje y alerta cuando perdiste o ganaste.
+              <div class="proyecto__iconos">
+                <a
+                  href="https://github.com/nataliamachella/pacman-game"
+                  target="_blank"
+                  ><i class="fa-brands fa-github fa-xl"></i
+                ></a>
+                <a
+                  href="https://youtube.com/shorts/ev2hB9r6IzA?feature=share"
+                  target="_blank"
+                  ><i class="fa-brands fa-youtube fa-xl"></i
+                ></a>
+                <a href="https://pacman-game-nm.netlify.app/" target="_blank"
+                  ><i class="fa-solid fa-globe fa-xl"></i
                 ></a>
               </div>
             </div>
           </div>
         </div>
+
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
       </div>
     </section>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 
+    <script>
+      let swiper = new Swiper(".swiper", {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        breakpoints: {
+          600: {
+            slidesPerView: 2,
+          },
+        },
+      });
+    </script>
     <script src="scripts.js"></script>
   </body>
 </html>
