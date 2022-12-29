@@ -1,5 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Montserrat:wght@300;400;600;700&display=swap");
 
+:root {
+  --background-color: linear-gradient(to right, #ad5389, #3c1053);
+  --text-color: #fff;
+  --hover: #f7acc6;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -12,7 +18,7 @@ html {
 }
 
 .contenedor__burbujas {
-  background: #520066;
+  background: var(--background-color);
   position: fixed;
   width: 100%;
   height: 100vh;
@@ -68,11 +74,11 @@ html {
 
 .header__logo {
   font-size: 36px;
-  color: #fff;
+  color: var(--text-color);
 }
 
 .header__logo:hover {
-  color: #fff;
+  color: var(--text-color);
   text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff;
 }
 
@@ -84,7 +90,7 @@ html {
 
 .nav a {
   text-decoration: none;
-  color: #fff;
+  color: var(--text-color);
   font-weight: bold;
   font-size: 20px;
   font-family: "Lato", sans-serif;
@@ -95,7 +101,7 @@ html {
 }
 
 .nav a:hover {
-  color: #f7acc6;
+  color: var(--hover);
   border-bottom: 2px solid currentcolor;
 }
 
@@ -104,19 +110,17 @@ html {
 }
 
 .nav__logos i {
-  color: #fff;
+  color: var(--text-color);
 }
 
 .nav__logos i:hover {
-  color: #fff;
+  color: var(--text-color);
   text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff;
 }
 .contenido-descripcion {
-  width: 60%;
   display: flex;
   height: 100vh;
-  margin: auto;
-
+  justify-content: center;
   align-items: center;
   text-align: center;
   letter-spacing: 3px;
@@ -125,7 +129,7 @@ html {
 .contenido-descripcion .h1 {
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: #fff;
+  color: var(--text-color);
   text-shadow: 5px 5px 10px #fff;
   margin-top: 50px;
   margin-bottom: 30px;
@@ -136,8 +140,12 @@ html {
 }
 
 .contenido-descripcion h3 {
-  color: white;
+  color: var(--text-color);
   font-size: 25px;
+}
+.iconos-stack {
+  color: var(--text-color);
+  margin: 20px 0;
 }
 
 .contenido-descripcion .btn-link {
@@ -147,7 +155,6 @@ html {
   border-radius: 30px;
   text-transform: uppercase;
   text-decoration: none;
-
   color: #f7acc6;
   font-weight: bold;
   border: 2px solid #f7acc6;
@@ -156,40 +163,42 @@ html {
 
 .contenido-descripcion .btn-link:hover {
   border: 2px solid #fff;
-
   color: #fff;
   text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff;
   animation: none;
 }
 
-.iconos-stack {
-  color: #fff;
-
-  margin: 20px 0;
-}
-
 /* SECCION SOBRE MI */
 
 #sobremi {
-  background-color: #fff;
-  color: #444;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-areas:
+    "titulos titulos titulos"
+    "imagen texto texto";
+  background: var(--background-color);
+  color: var(--text-color);
   text-align: center;
   height: 100vh;
   padding: 30px 40px;
 }
+.sobremi-titulos {
+  grid-area: titulos;
+}
 
-#sobremi .sobremi h2 {
+.sobremi-titulos h2 {
   font-size: 34px;
   font-weight: bold;
   margin: 80px 0 20px;
   letter-spacing: 2px;
 }
 
-#sobremi .sobremi h2 span {
+.sobremi-titulos h2 span {
   color: #ffafbd;
 }
 
-#sobremi .sobremi h3 {
+.sobremi-titulos h3 {
   font-size: 18px;
   font-weight: 500;
   text-transform: uppercase;
@@ -198,15 +207,20 @@ html {
 }
 
 #sobremi .sobremi img {
-  height: 250px;
-  margin-bottom: 10px;
+  margin-top: 50px;
+  grid-area: imagen;
+  height: 350px;
 }
-
-#sobremi .sobremi p {
+#sobremi .sobremi-texto {
+  grid-area: texto;
+}
+#sobremi .sobremi-texto p {
+  letter-spacing: 1.5px;
   font-size: 17px;
   line-height: 25px;
-  color: #444;
-  margin: 10px auto;
+  color: var(--text-color);
+  margin-top: 50px;
+  margin-right: 70px;
 }
 
 /* SECCION PORTFOLIO */
@@ -224,59 +238,8 @@ html {
   font-size: 28px;
   text-align: center;
   text-transform: uppercase;
-  color: #fff;
-  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff;
+  color: var(--text-color);
   margin: 50px auto;
-}
-
-#portfolio .fila {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 50px auto;
-}
-
-#portfolio .fila .proyecto {
-  width: 40%;
-  height: 450px;
-  margin: 0 30px;
-  box-shadow: 10px 5px 5px #fff;
-  position: relative;
-  overflow: hidden;
-}
-
-#portfolio .fila .proyecto img {
-  width: 100%;
-  height: 100%;
-  filter: grayscale(1);
-  object-fit: fill;
-  transition: 0.3s;
-}
-
-#portfolio .fila .proyecto:hover img {
-  filter: grayscale(0);
-}
-
-#portfolio .fila .proyecto .info {
-  position: absolute;
-
-  letter-spacing: 1.5px;
-  line-height: 25px;
-  left: 0;
-  background-color: rgba(38, 1, 33, 0.8);
-  color: #fff;
-  width: 100%;
-  padding: 10px;
-  opacity: 0;
-  bottom: -40px;
-  transition: 0.3s;
-  font-size: 18px;
-  font-weight: bold;
-}
-
-#portfolio .fila .proyecto:hover .info {
-  opacity: 1;
-  bottom: 0;
 }
 
 #portfolio .proyecto__iconos {
@@ -286,7 +249,7 @@ html {
 }
 #portfolio .proyecto__iconos a {
   margin: 10px 20px;
-  color: #fff;
+  color: var(--text-color);
 }
 #portfolio .proyecto__iconos a:hover {
   text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff;
@@ -346,4 +309,67 @@ html {
 /* SECCION RESPONSIVE */
 
 @media screen and (max-width: 768px) {
+  .bubbles {
+    display: none;
+  }
+  .header {
+    position: relative;
+    display: grid;
+    grid-template-rows: repeat(3, 100%);
+  }
+
+  .nav li {
+    display: inline-flex;
+    margin: 0 10px;
+  }
+  .nav a {
+    font-size: 17px;
+  }
+  .nav__logos {
+    margin: 0 auto;
+  }
+  .contenido-descripcion {
+    display: flex;
+    width: 100%;
+  }
+  .contenido-descripcion .h1 {
+    margin-top: 180px;
+    margin-right: 50px;
+    letter-spacing: 1.5px;
+    font-size: 40px;
+    letter-spacing: 3px;
+    font-weight: 700;
+  }
+  .contenido-descripcion h3 {
+    font-size: 19px;
+  }
+  .iconos-stack {
+    margin: 20px auto;
+  }
+  .contenido-descripcion .btn-link {
+    margin: 70px 0;
+    width: 45%;
+  }
+  #sobremi {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas:
+      "titulos titulos"
+      "texto texto";
+    margin-top: 100px;
+    text-align: center;
+    padding: 10px 10px;
+  }
+  .sobremi-titulos {
+    margin: 20px auto;
+  }
+
+  #sobremi .sobremi img {
+    display: none;
+  }
+  #sobremi .sobremi-texto p {
+    margin: 0 auto;
+    padding: 0 10px;
+  }
 }
