@@ -330,7 +330,7 @@ html {
   text-decoration: none;
 }
 
-.swiper .card .title-container h3 {
+.swiper .card .title-container {
   margin: 0;
   color: #fff;
   font-size: 20px;
