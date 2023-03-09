@@ -224,6 +224,7 @@ html {
 }
 .sobremi__titulos {
   grid-area: titulos;
+
   justify-content: center;
   text-align: center;
 }
@@ -255,17 +256,18 @@ html {
 }
 .sobremi__texto {
   grid-area: texto;
+  height: 100%;
+  margin: 60px 0 10px;
 }
 .sobremi__texto p {
-  padding: 30px;
+  padding: 10px;
   justify-content: center;
-  letter-spacing: 1.5px;
+  letter-spacing: 1.4px;
   font-size: 17px;
-  line-height: 30px;
+  line-height: 25px;
   color: var(--text-color);
   text-align: center;
 }
-
 /* PORTFOLIO */
 
 #portfolio {
